@@ -32,11 +32,10 @@ export const AuthProvider = (props) => {
       tokenController.setToken(token);
       //Obtener los datos del usuario:
       const response = await userController.getMe();
-      console.log(response)
-
+      //console.log(response)
       //Setear en el estado user los datos del usuario:
       setUser(response);
-      console.log(user)
+      //console.log(user)
       //Setear el valor de token en el estado token:
       setToken(token);
       //Setear loading a false:
