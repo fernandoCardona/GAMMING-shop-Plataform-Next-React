@@ -15,12 +15,12 @@
 
 ## Routes Address Private:
 
-- Add Address: [POST] http://localhost:1337/api/adresses
-- Populate Address: [GET] http://localhost:1337/api/adresses?populate=\*
-- Find Address per User: [GET] http://localhost:1337/api/adresses?filters[user][id][$eq]=4
-- Find Address by ID: [GET] http://localhost:1337/api/adresses/:id
-- Update Address: [PUT] http://localhost:1337/api/adresses/:id
-- Delete Address: [DELETE] http://localhost:1337/api/adresses/:id
+- Add Address: [POST] http://localhost:1337/api/addresses
+- Populate Address: [GET] http://localhost:1337/api/addresses?populate=\*
+- Find Address per User: [GET] http://localhost:1337/api/addresses?filters[user][id][$eq]=4
+- Find Address by ID: [GET] http://localhost:1337/api/addresses/:id
+- Update Address: [PUT] http://localhost:1337/api/addresses/:id
+- Delete Address: [DELETE] http://localhost:1337/api/addresses/:id
 
 ---
 

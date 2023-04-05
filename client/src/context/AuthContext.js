@@ -21,7 +21,29 @@ export const AuthProvider = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(false);
+    ( async () => {
+      //obtenemos el token de localStorage:
+      const token = tokenController.getToken();
+      if (!token) {
+        //Hacemos un logout:
+        logout();
+        //Cambiamos el estado a faalse de loading:
+        setLoading(false);
+        //Hacemos un return para parar la ejecucion:
+        return
+
+      }
+      //Comprobamos si el token a caducado:
+      if ( tokenController.hasExpired(token) ) {
+        //Si el token ha caducado hacemos un logout:
+        logout();
+      }else {
+        //si el token no ha caducado hacemos login pasandole el token:
+        await login(token);
+      }
+
+    })()
+    
   }, []);
 
   //Funcion login:
@@ -45,13 +67,25 @@ export const AuthProvider = (props) => {
       setLoading(false);
     }
   };
+  const logout = () => {
+    //console.log('CERRAR SESSION')
+    tokenController.removeToken();
+    setToken(null);
+    setUser(null);
+  }
+  const updateUser = ( key, value ) => {
+    setUser({
+      ...user,
+      [key]: value,
+    })
+  }
 
   const data = {
     accessToken: token,
-    user: user,
-    login: login,
-    logout: null,
-    updateUser: null,
+    user,
+    login,
+    logout,
+    updateUser,
   };
 
   if (loading) return null;
