@@ -43,6 +43,7 @@ export class Game {
         if (response.status !== 200) throw result;
 
         return result;
+        
     } catch (error) {
         throw error;
     }

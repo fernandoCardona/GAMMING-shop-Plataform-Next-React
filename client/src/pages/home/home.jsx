@@ -6,7 +6,10 @@ import { Container } from 'semantic-ui-react';
 //IMPORTS COMPONENTS DE LA APP:
 import { BasicLayout } from '@/layouts';
 import { Home, BannerLastGamePublished } from '@/components/Home';
-//import { Seo } from "@/components/Shared";
+import { 
+    Separator,
+    Seo 
+} from "@/components/Shared";
 
 //IMPORTS Styles/Images DE LA APP:
 
@@ -18,7 +21,15 @@ export const HomePage = () => {
         <>
             <BasicLayout >
                 <Home.BannerLastGamePublished />
-                <Home.LatestGames />
+
+                <Separator height={100} />
+
+                <Container>
+                    <Home.LatestGames title="Latest releases" />
+                </Container>
+
+                <Separator height={100} />
+
             </BasicLayout>
         </>
        
