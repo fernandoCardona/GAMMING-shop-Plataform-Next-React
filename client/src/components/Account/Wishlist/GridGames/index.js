@@ -1,1 +1,1 @@
-export * from './GridGames.jsx';
+export * from "./GridGames";

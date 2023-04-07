@@ -14,7 +14,7 @@ export const LatestGames = (props) => {
     const { title, limit = 9, platformId = null } = props;
     //creamos el state de games:
     const [games, setGames] = useState(null);
-    console.log(games)
+    //console.log(games)
 
     useEffect(() => {
         (async () => {

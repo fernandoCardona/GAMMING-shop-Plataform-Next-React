@@ -24,7 +24,7 @@ export const BannerLastGamePublished = () => {
                 try {
                     const response = await gameController.getLastPublished();
                     setGame(response.data[0]);
-                    console.log('este es el juego',game)
+                    //console.log('este es el juego',game)
                 } catch (error) {
                     console.error(error); 
                 }
@@ -35,7 +35,7 @@ export const BannerLastGamePublished = () => {
     if (!game) return null;
 
     const wallpaper  = game.attributes.wallpaper;
-    console.log('wallpaper', wallpaper  );  
+    //console.log('wallpaper', wallpaper  );  
     const releaseDate = new Date(game.attributes.releaseDate).toISOString();
     const price = fn.calcDiscountedPrice(
         game.attributes.price,

@@ -50,60 +50,67 @@ export class Game {
     }
 
     async getGamesByPlatformSlug(slug, page) {
-    try {
-        const filters = `filters[platform][slug][$eq]=${slug}`;
-        const pagination = `pagination[page]=${page}&pagination[pageSize]=30`;
-        const populate = "populate=*";
-        const urlParams = `${filters}&${pagination}&${populate}`;
+        try {
+            const filters = `filters[platform][slug][$eq]=${slug}`;
+            const pagination = `pagination[page]=${page}&pagination[pageSize]=20`;
+            const populate = "populate=*";
+            const urlParams = `${filters}&${pagination}&${populate}`;
 
-        const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${urlParams}`;
+            const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${urlParams}`;
 
-        const response = await fetch(url);
-        const result = await response.json();
+            const response = await fetch(url);
+            const result = await response.json();
 
-        if (response.status !== 200) throw result;
+            if (response.status !== 200) throw result;
 
-        return result;
-    } catch (error) {
-        throw error;
-    }
+            return result;
+            
+        } catch (error) {
+            throw error;
+        }
     }
 
     async searchGames(text, page) {
-    try {
-        const filters = `filters[title][$contains]=${text}`;
-        const pagination = `pagination[page]=${page}&pagination[pageSize]=30`;
-        const populate = "populate=*";
-        const urlParams = `${filters}&${pagination}&${populate}`;
+        try {
+            const filters = `filters[title][$contains]=${text}`;
+            const pagination = `pagination[page]=${page}&pagination[pageSize]=20`;
+            const populate = "populate=*";
+            const urlParams = `${filters}&${pagination}&${populate}`;
 
-        const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${urlParams}`;
+            const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${urlParams}`;
 
-        const response = await fetch(url);
-        const result = await response.json();
+            const response = await fetch(url);
+            const result = await response.json();
 
-        if (response.status !== 200) throw result;
+            if (response.status !== 200) throw result;
 
-        return result;
-    } catch (error) {
-        throw error;
-    }
+            return result;
+
+        } catch (error) {
+            throw error;
+        }
     }
 
     async getBySlug(slug) {
-    try {
-        const filters = `filters[slug][$eq]=${slug}`;
-        const populate = `populate[0]=wallpaper&populate[1]=cover&populate&populate[2]=screenshots&populate[3]=platform&populate[4]=platform.icon`;
-        const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${filters}&${populate}`;
+        try {
+            const filters = `filters[slug][$eq]=${slug}`;
 
-        const response = await fetch(url);
-        const result = await response.json();
+            const populateGame = `populate[0]=wallpaper&populate[1]=cover&populate&populate[2]=screenshots&populate[3]=platform`;
+            const populatePlatform = `populate[4]=platform.icon`;
+            const populates =`${populateGame}&${populatePlatform}`;
+            
+            const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${filters}&${populates}`;
 
-        if (response.status !== 200) throw result;
+            const response = await fetch(url);
+            const result = await response.json();
 
-        return result.data[0];
-    } catch (error) {
-        throw error;
-    }
+            if (response.status !== 200) throw result;
+
+            return result.data[0];
+            
+        } catch (error) {
+            throw error;
+        }
     }
 
     async getGameById(id) {

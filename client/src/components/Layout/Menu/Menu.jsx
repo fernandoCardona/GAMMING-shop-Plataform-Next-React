@@ -33,11 +33,23 @@ export const Menu = ( props ) => {
                 //Peticion:
                 const response = await platformController.getAll();
                 setPlatforms(response.data);
+
             } catch (error) {
                 console.error(error);
             }
         })()
     }, []);
+    
+    useEffect(() => {
+        setSearchText(router.query.s || '');
+    }, []);
+
+    const onSearch = (text) => {
+        setSearchText(text);
+        console.log(searchText)
+        router.replace(`/search?s=${text}`);
+
+    };
 
 
 
@@ -62,7 +74,7 @@ export const Menu = ( props ) => {
             >
                 <Input
                     id="search-games"
-                    placeholder="Buscador"
+                    placeholder="Seaarch"
                     className={styles.input}
                     focus={true}
                     value={searchText}

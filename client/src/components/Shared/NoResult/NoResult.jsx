@@ -3,15 +3,17 @@
 //IMPORTS DEPENDENCIAS DE LA APP:
 //IMPORTS COMPONENTS DE LA APP:
 //IMPORTS Styles/Images DE LA APP:
-import styles from "./GridGames.module.scss";
+import styles from "./NoResult.module.scss";
 
 
-export const GridGames = () => {
+export const NoResult = (props) => {
+    //extraemos props
+    const { text } = props;
 
 
     return (
-        <div>
-            <h1>GridGames</h1>
+        <div className={styles.noResult}>
+            <p>{text}</p>
         </div>
     )
 }
