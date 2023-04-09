@@ -14,4 +14,14 @@
   import "slick-carousel/slick/slick.css";
   import "slick-carousel/slick/slick-theme.css";
 
--
+- yarn add @stripe/stripe-js
+- yarn add @stripe/react-stripe-js
+
+## COMPONENT HEADER:
+
+//IMPORTS DE REACT/NEXT:
+//IMPORTS DEPENDENCIAS DE TERCEROS:
+//IMPORTS DEPENDENCIAS DE LA APP:
+//IMPORTS COMPONENTS DE LA APP:
+//IMPORTS Styles/Images DE LA APP:
+import styles from "./---.module.scss";

@@ -14,19 +14,19 @@ import styles from "./Panel.module.scss";
 export const Panel = (props) => {
     const { gameId, game } = props;
     const [loading, setLoading] = useState(false);
-    //const { addCart } = useCart();
+    const { addCart } = useCart();
 
     const platform = game.platform.data;
     const buyPrice = fn.calcDiscountedPrice(game.price, game.discount);
 
-    // const addCartWrapper = () => {
-    //     setLoading(true);
-    //     addCart(gameId);
+    const addCartWrapper = () => {
+        setLoading(true);
+        addCart(gameId);
 
-    //     setTimeout(() => {
-    //     setLoading(false);
-    //     }, 500);
-    // };
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    };
 
     return (
         <Container className={styles.panel}>
@@ -67,7 +67,7 @@ export const Panel = (props) => {
                 </div>
 
                 <Button primary fluid 
-                        //onClick={addCartWrapper} 
+                        onClick={addCartWrapper} 
                         loading={loading}
                 >
                     Comprar ahora

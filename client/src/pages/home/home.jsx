@@ -13,6 +13,7 @@ import {
     Seo 
 } from "@/components/Shared";
 //IMPORTS Styles/Images DE LA APP:
+ 
 
 const platformId = {
     playstation: 2,
@@ -23,7 +24,7 @@ const platformId = {
 
 
 export const HomePage = () => {
-
+ 
     
     return (
         <>

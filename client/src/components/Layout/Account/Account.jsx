@@ -13,8 +13,8 @@ import styles from "./Account.module.scss";
 export const Account = () => {
 
     const { user } = useAuth();
-    // const { total } = useCart();
-    const total = 5;
+    const { total } = useCart();
+  
     const router = useRouter();
 
     //definimos funciones de redireccion:
