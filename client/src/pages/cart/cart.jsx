@@ -47,10 +47,8 @@ const CartPage = () => {
             <CartLayout>
                 {currentStep === 1 && <Cart.StepOne games={games} />}
                 {currentStep === 2 && <Cart.StepTwo games={games} />}
-                 {/* {currentStep === 3 && <Cart.StepThree />} 
-                {currentStep === 1 && <p>Step1</p>}
-                {currentStep === 2 && <p>Step2</p>}*/}
-                {currentStep === 3 && <p>Step3</p>}  
+                {currentStep === 3 && <Cart.StepThree />} 
+                
             </CartLayout>
         </>
     )

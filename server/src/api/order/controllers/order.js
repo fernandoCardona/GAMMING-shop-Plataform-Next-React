@@ -20,10 +20,10 @@ module.exports = createCoreController('api::order.order',
             const { token, products, idUser, addressShipping } = ctx.request.body;
 
             let totalPayment = 0;
-            products.forEach(product => {
+            products.forEach((product) => {
                 const priceTemp = calcDiscountPrice(
-                    product.atributes.price,
-                    product.atributes.discount,
+                    product.attributes.price,
+                    product.attributes.discount,
                 );
                 
                 totalPayment += Number(priceTemp) * product.quantity;
