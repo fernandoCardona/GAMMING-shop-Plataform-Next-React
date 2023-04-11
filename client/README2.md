@@ -25,3 +25,6 @@
 //IMPORTS COMPONENTS DE LA APP:
 //IMPORTS Styles/Images DE LA APP:
 import styles from "./---.module.scss";
+
+import { Seo } from "@/components/Shared";
+<Seo title='Log-in Gaming platform'/>

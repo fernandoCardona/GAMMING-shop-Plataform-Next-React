@@ -15,6 +15,7 @@ import styles from "./Order.module.scss";
 export const Order = ( props ) => {
     //Extraemos props:
     const { order } = props;
+
     //Creamos el State para el Modal:
     const [showModal, setShowModal] = useState(false);
 
@@ -42,9 +43,10 @@ export const Order = ( props ) => {
             <div className={styles.order} onClick={openCloseModal}>
                 <div>
                 <span>
-                    {DateTime.fromISO(createdAt, { locale: "es" }).toFormat(
-                    "dd/MM/yyyy"
-                    )}
+                    {
+                        DateTime.fromISO(createdAt, { locale: "es" })
+                                .toFormat("dd/MM/yyyy")
+                    }
                 </span>
                 <p>{getTotalProducts()} productos</p>
                 </div>
@@ -55,11 +57,11 @@ export const Order = ( props ) => {
             <BasicModal
                 show={showModal}
                 onClose={openCloseModal}
-                title="Información del pedido"
+                title="Order info"
             >
                 {
                     map(products, (product) => (
-                    <div className={styles.product}>
+                    <div key={order.id}  className={styles.product}>
                         <Image src={product.attributes.cover.data.attributes.url} />
 
                         <div>

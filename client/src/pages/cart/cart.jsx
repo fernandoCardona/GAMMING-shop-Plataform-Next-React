@@ -8,7 +8,7 @@ import { useCart } from "@/hooks";
 //IMPORTS COMPONENTS DE LA APP:
 import { CartLayout } from '@/layouts';
 import { Cart } from "@/components/Cart";
-//import { Seo } from "@/components/Shared";
+import { Seo } from "@/components/Shared";
 //IMPORTS Styles/Images DE LA APP:
 
 const gameController = new Game();
@@ -44,6 +44,8 @@ const CartPage = () => {
     //console.log('GAMES -->',games)
     return (
         <>
+            <Seo title='My basket'/>
+
             <CartLayout>
                 {currentStep === 1 && <Cart.StepOne games={games} />}
                 {currentStep === 2 && <Cart.StepTwo games={games} />}

@@ -14,7 +14,7 @@ import {
     Wishlist,
     Orders,
 } from "@/components/Account";
-import { Separator } from "@/components/Shared/";
+import { Separator, Seo } from "@/components/Shared/";
 //IMPORTS Styles/Images DE LA APP:
 import styles from "./account.module.scss";
 
@@ -88,6 +88,8 @@ export const AccountPage = () => {
     
     return (
         <>
+            <Seo title='My account'/>
+
             <BasicLayout isContainer relative>
                 
                     <Info/>

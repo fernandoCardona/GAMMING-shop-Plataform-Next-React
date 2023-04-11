@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react';
 //IMPORTS COMPONENTS DE LA APP:
 import { JoinLayout } from '@/layouts';
 import { RegisterForm } from '@/components/Auth';
-
+import { Seo } from "@/components/Shared";
 //IMPORTS Styles/Images DE LA APP:
 import styles from './sign-up.module.scss';
 
@@ -14,16 +14,21 @@ const SignUpPage = () => {
 
     
     return (
-        <JoinLayout>
-            <div className={styles.signIn}>
-                <h3>Create account</h3>
-                <RegisterForm />
+        <>
+            <Seo title='Register at Gaming plataform'/>
+            
+            <JoinLayout>
+                <div className={styles.signIn}>
+                    <h3>Create account</h3>
+                    <RegisterForm />
 
-                <div className={styles.actions}>
-                    <Link href="/join/sign-in">Back</Link>
+                    <div className={styles.actions}>
+                        <Link href="/join/sign-in">Back</Link>
+                    </div>
                 </div>
-            </div>
-      </JoinLayout>
+            </JoinLayout>
+        </>
+        
         
     )
 }

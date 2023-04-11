@@ -28,6 +28,9 @@ export const HomePage = () => {
     
     return (
         <>
+            <Seo/>
+
+
             <BasicLayout >
                 <Home.BannerLastGamePublished />
 

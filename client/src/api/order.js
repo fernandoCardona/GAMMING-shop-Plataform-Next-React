@@ -18,7 +18,7 @@ export class Order {
             const url =`${ENV.API_URL}/${ENV.ENDPOINTS.ORDER}?[user][id][$eq]=${userId}&sort[0]=createdAt:desc`;
              
             const response = await authFetch(url);
-            console.log(response)
+            //console.log(response)
             const result = await response.json();
 
             if (response.status !== 200) throw result;

@@ -16,26 +16,32 @@ const GamePage = (props) => {
     const wallpaper = game.attributes.wallpaper.data.attributes.url;
 
     return (
-        <BasicLayout>
-            <Game.HeaderWallpaper
-                image={wallpaper}
-            />
-            <Game.Panel gameId={game.id} game={game.attributes} />
 
-            <Separator height={50} />
+        <>
+            <Seo title={`${game.attributes.title}`} description={game.attributes.summary}/>
 
-            <Game.Info game={game.attributes} />
+            <BasicLayout>
+                <Game.HeaderWallpaper
+                    image={wallpaper}
+                />
+                <Game.Panel gameId={game.id} game={game.attributes} />
 
-            <Separator height={30} />
+                <Separator height={50} />
 
-            <Game.Media 
-                video={game.attributes.video}
-                screenshots={game.attributes.screenshots.data}
-            />
+                <Game.Info game={game.attributes} />
 
-            <Separator height={50} />
+                <Separator height={30} />
 
-        </BasicLayout>
+                <Game.Media 
+                    video={game.attributes.video}
+                    screenshots={game.attributes.screenshots.data}
+                />
+
+                <Separator height={50} />
+
+            </BasicLayout>
+        </>
+        
     )
 }
 

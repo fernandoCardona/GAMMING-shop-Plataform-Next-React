@@ -24,7 +24,7 @@ export const Orders = () => {
                 try {
                     //console.log(user.id)
                     const response = await orderController.getAll(user.id);
-                    console.log(response)
+                    //console.log(response)
                     setOrders(response.data);
                 } catch (error) {
                     console.error(error);

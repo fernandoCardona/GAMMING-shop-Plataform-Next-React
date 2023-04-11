@@ -5,7 +5,7 @@ import { size } from 'lodash';
 //IMPORTS DEPENDENCIAS DE LA APP:
 import { BasicLayout } from '@/layouts';
 //IMPORTS COMPONENTS DE LA APP:
-import { GridGames, Separator, NoResult, Pagination } from '@/components/Shared'
+import { GridGames, Separator, NoResult, Pagination, Seo } from '@/components/Shared'
 //IMPORTS Styles/Images DE LA APP:
 
 
@@ -13,12 +13,14 @@ import { GridGames, Separator, NoResult, Pagination } from '@/components/Shared'
 const PlatformPage = (props) => {
     //Extraemos props
     const { games, platform, pagination } = props;
-
+console.log(platform)
     //Comprobamos si hag productos de esa plataforma 
     const hasProducts = size(games) > 0;
-    console.log(pagination)
+    //console.log(pagination)
     return (
         <>
+            <Seo title={ `Games for platform ${platform.attributes.title}`}/>
+
             <BasicLayout relative>
                 <Container>
                 <Separator height={50} />
